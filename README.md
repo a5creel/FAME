@@ -18,4 +18,3 @@ Email: andie.creel\@yale.edu
 
 -  [class notes](class_notes/week_1/1_class.pdf): Course goals, science vs. math, sets (elements, subsets, unions, intersections), number spaces (real, rational, integers), functions (explicit vs. implicit, domain/range, endogenous vs. exogenous variables), equilibrium concepts, mathematical properties (commutative, associative, distributive), convex sets versus concave and convex functions, solving a system of equations (including pset example), quadratic formula, jensen's inequality 
 -  [Old section notes](section_notes/1_section.pdf): sets, solving system of equations, quadratic equations, domain/range
-- [zoom recording of section](https://yale.zoom.us/rec/share/WQ-3BEzd_GEec7FepNDbEjXUDq56v_cYkZhugw8Vyfyl_eyRB9_R9hB5xzVZoTKS.CntB5Aa1t5buY-hc?startTime=1693578615000)
