@@ -14,7 +14,11 @@ Email: andie.creel\@yale.edu
 
 # Preliminaries 
 
-### Week One (Oct 21)
+### Week One (Oct 21) -- Preliminaries
 
 -  [class notes](class_notes/week_1/1_class.pdf): Course goals, science vs. math, sets (elements, subsets, unions, intersections), number spaces (real, rational, integers), functions (explicit vs. implicit, domain/range, endogenous vs. exogenous variables), equilibrium concepts, mathematical properties (commutative, associative, distributive), convex sets versus concave and convex functions, solving a system of equations (including pset example), quadratic formula, jensen's inequality 
 -  [Old section notes](section_notes/1_section.pdf): sets, solving system of equations, quadratic equations, domain/range
+
+### Week Two (Oct 28) -- Derivatives I 
+
+-  [class notes](class_notes/week_2/2_class.pdf): Sequences and series (definitions, limits, monotonicity, bounds), infinity as a concept (countable vs. uncountable), relationships between variables and linear approximation, intermediate value theorem (motivation for collecting more data), definition of a derivative (as instantaneous slope or rate of change), derivative notation (Leibniz, Newton, and prime forms), first and second derivatives (interpreting slope and curvature), power rule, chain rule, and product rule (core differentiation tools), logarithmic differentiation and percent change (relative vs. absolute units), and the constant e (derived from a limit definition and linked to exponential growth).
