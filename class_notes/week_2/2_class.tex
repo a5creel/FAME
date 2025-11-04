@@ -426,7 +426,7 @@ Why!? Chain rule, log rule, exponential rule. First, do a u-substitution and app
 \begin{align}
     U(x) &= e^x \implies\\
     F(x) &= ln(U(x)) \implies \\
-    \frac{dF(x)}{dx} &= \frac{dF(U(x))}{dx} = \frac{dF(x)}{dU(x)}\frac{dU(x)}{dx}
+    \frac{dF(x)}{dx} &= \frac{dF(U(x))}{dx} = \frac{dF(x)}{dU(x)}\frac{dU(x)}{dx} \label{u_sub}
 \end{align}
 Find $\frac{dF(x)}{dU(x)}$ using log rules 
 \begin{align}
@@ -438,7 +438,7 @@ Find $\frac{dU(x)}{dx}$ using exponential rules
     \frac{dU(x)}{dx} = e^x
 \end{align}
 
-Now we can plug these results back into equation 11, 
+Now we can plug these results back into equation \ref{u_sub}, 
 \begin{align}
     \frac{dF(x)}{dx} &= \frac{1}{U(x)} e^x
 \end{align}
