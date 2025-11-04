@@ -366,6 +366,87 @@ use the definition of $e$
 
 Ta da! We've used the definition of a derivative to prove our derivative rule for logs, $\ln(x)$. 
 
+\section{Review and Examples}
+
+\subsection{Notation:}
+\begin{align}
+    \frac{dF(x)}{dx} = F'(x) \\
+\end{align}
+
+\subsection{Chain rule: } Consider $F(G(X))$
+\begin{align}
+    \frac{dF}{dx} = \frac{dF}{dG} \frac{dG}{dx}
+\end{align}
+
+\subsection{We can work with derivatives like fractions.} Therefore, 
+\begin{align}
+    \frac{dF(x)}{dx} = F'(x) \implies dF(x) = F'(x) dx
+\end{align}
+This means we went from a \textit{derivative} to a \textit{differential}. This is an important part of notation with integrals as well. The thing to know and remember is that $dx$ just means "small changes." We can divide by small changes (like in derivatives) or multiply by small changes (like in differentials). \\
+
+\subsection{Derivative rule for exponential function, $e^x$}:
+\begin{align}
+    \frac{de^x}{dx} = e^x
+\end{align}
+We have proportional change. This is the only function in the world where the rate of change at a point is equal to the function at that point. \\
+
+\subsection{Example One}
+Consider the function \[f(x) = e^{ax}\]
+
+We know \[\frac{de^x}{dx} = e^x.\] 
+
+Let's do a u-substitution to make this simpler. Let \[U(x) = ax.\]  
+
+Our function is now written as \[f(x) = e^U.\] 
+
+Recall the chain rule:
+
+\begin{align}
+   \frac{dF(x)}{dx} = \frac{dF(x)}{dU(x)}\frac{dU(x)}{dx} 
+\end{align}
+
+We want to know what $\frac{dF(x)}{dx}$ is. We can solve for the two simpler derivatives on the right hand side to gt this. 
+
+\[\frac{dF(x)}{dU(x)} = e^U \]
+\[\frac{dU(x)}{dx}  = a \implies\]
+\[\frac{dF(x)}{dx} = a e^U \]
+Now, plug our U-substitution back in: 
+\[\frac{dF(x)}{dx} = a e^{ax} \]
+
+\subsection{Example Two}
+Let 
+\begin{align}
+    F(x) = ln(e^x)
+\end{align}
+We're interested in the derivative. 
+\begin{align}
+    \frac{dF(x)}{dx} = 1
+\end{align}
+Why!? Chain rule, log rule, exponential rule. First, do a u-substitution and apply the chain rule
+\begin{align}
+    U(x) &= e^x \implies\\
+    F(x) &= ln(U(x)) \implies \\
+    \frac{dF(x)}{dx} &= \frac{dF(U(x))}{dx} = \frac{dF(x)}{dU(x)}\frac{dU(x)}{dx}
+\end{align}
+Find $\frac{dF(x)}{dU(x)}$ using log rules 
+\begin{align}
+    \frac{dF(x)}{dU(x)} = \frac{1}{U(x)}
+\end{align}
+
+Find $\frac{dU(x)}{dx}$ using exponential rules 
+\begin{align}
+    \frac{dU(x)}{dx} = e^x
+\end{align}
+
+Now we can plug these results back into equation 11, 
+\begin{align}
+    \frac{dF(x)}{dx} &= \frac{1}{U(x)} e^x
+\end{align}
+Plug our u-substitution back in, 
+\begin{align}
+    &= \frac{1}{e^x} e^x \\
+    &= 1
+\end{align}
 
 
 \end{document}
