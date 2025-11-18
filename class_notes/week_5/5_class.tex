@@ -1,0 +1,326 @@
+\documentclass[12pt]{article}
+
+\usepackage[paper=letterpaper,margin=2.5cm]{geometry} % Set Margins
+
+%% Math and math fonts
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{bbold} % for \mathbbm{1}
+
+% date
+\usepackage[nodayofweek]{datetime}
+
+% Color
+\usepackage{color, xcolor}
+
+% Misc
+\usepackage{environ}  % \collect@body in asmmath
+\usepackage{graphicx} % \includegraphics options
+\usepackage{mdframed} % text boxes
+\usepackage{indentfirst} % Indent first paragraph after section header
+\usepackage[shortlabels]{enumitem} % Control enumerate items with [(a)]
+\usepackage{comment} % Comments
+\usepackage{fancyhdr} % Headers and footers
+
+% Tables
+\usepackage{array}
+
+% Sub-figures and figure placement
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float} 
+
+% Graphing
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tikz}
+
+% Title Placement
+\usepackage{titling}
+\setlength{\droptitle}{-6em}
+
+%set indent to 
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+% Hyper refs
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor  = blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor = blue,
+    anchorcolor = blue
+}
+
+% % Citation management
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authordate,open={(},close={)}}
+
+% ----------------------------------------
+% TITLE
+% ----------------------------------------
+
+\pagestyle{fancy}
+
+\lhead{Creel}
+\chead{Week Five}
+\rhead{FAME}
+
+\title{FAME Week Five Class Notes -- Integrals I}
+\author{Andie Creel}
+
+\begin{document}
+\maketitle
+
+\section{A very simple integral}
+
+Think about if you have a function that is just equal to a constant $f(x) = A$. You want to find the area under your curve (\textit{i.e.,} take an integral), where the domain is $x=0$ through $x =10$ (which can also be written as $x \in [0, 10]$). The integral of $f(x)$ is the area under the constant $A$, 
+
+\begin{align*}
+    \int_{0}^{10} f(x) dx &= \int_{0}^{10} A dx
+\end{align*}
+
+Constants can be moved in front of the integral signs, the right-hand side above can be rewritten  
+\begin{align*}
+    &= A\int_{0}^{10} dx\\
+    &= A * (x |_0^{10})\\
+    &= A * (10 - 0) \\
+    &= A * 10. 
+\end{align*}
+
+When a function is equal to a constant, it's just a line. The area under a line is a rectangle. The area of a rectangle is width times height. The width in this example is the length of the domain, 10, and the height is the constant $A$. 
+
+\section{Reimann Sums}
+An integral is the area under a curve. A reimann sum approximates this area by using rectangles of different heights whose width gets smaller and smaller (\textit{i.e.,} width goes to zero).
+
+Let $A(\cdot)$ be an area function. $A$ returns the area under a curve. 
+
+Recall that small changes in $x$ are equal to $\epsilon$ but also can be written as $\partial x$, $\Delta x = \epsilon = \partial x$.
+
+\begin{align*}
+    f(a) = \frac{A(a+\epsilon)-A(a)}{\epsilon}
+\end{align*}
+
+If we take the limit of this function as $\epsilon \to 0$, we get the definition of a derivative 
+\begin{align*}
+    \lim_{\epsilon \to 0} f(a) = \frac{A(a+\epsilon)-A(a)}{\epsilon} \implies\\
+    A'(x) = \frac{\partial A}{\partial x} \implies \\
+    A'(x) \partial x = \partial A \implies \\
+    A'(x) \epsilon = \partial A 
+\end{align*}
+where all of these steps come from knowing $\epsilon = \partial x$ and treating a derivative like a fraction. What is $A'(x)$? If $A(\cdot)$ is the area under the curve, then the derivative is the curve which is $f(x)$ therefore $A'(x) = f(x)$. 
+
+Therefore, a change in area can be written as
+\begin{align*}
+    \partial A = f(x) \epsilon
+\end{align*}
+which is just a rectangle where $f(x)$ is the height and $\epsilon$ is the width. 
+
+We can rewrite this as 
+\begin{align*}
+    \partial A =  \sum_{x=a}^{b}f(x) \epsilon.
+\end{align*}
+if you want to find the area under the curve from the point where $x =a $ to the point where $x = b$. This is a sum of rectangles. 
+
+Integration is just fancy summation! So, as $\epsilon$ gets really small, and we move from discrete changes to arbitrarily small changes (smooth). We can then write this as 
+\begin{align*}
+    \partial A =  \int_{a}^{b} f(x) \partial x.
+\end{align*}
+
+\section{Additively separable}
+Consider a function 
+\begin{align*}
+    f(x) = h(x) + g(x)
+\end{align*}
+where $f(x)$ can be separated into two simpler functions. For instance, any polynomial would take this form (\textit{e.g.} $f(x) = 3x^2 + 6x$). 
+
+The function $A(\cdot)$ is still returning the area under the curve $f(x)$. Then, we can write the function as 
+
+\begin{align*}
+    dA = \int \Big(h(x) + g(x) \Big)dx
+\end{align*}
+
+Because the integral is a linear operator, we do not need to worry about Jensen's inequality and we can pass the integral sign through the addition 
+\begin{align*}
+    dA = \int h(x) dx + \int g(x) dx
+\end{align*}
+
+\section{Considering constants}
+Remember that when you take the derivative of a constant, it's zero. When you integrate a function, you will not be able to get the constant back out (you don't know what the constant is),
+
+\begin{align*}
+    F(x) + C = \int f(x) dx.
+\end{align*}
+When ever you take an integral, remember to add on your unidentified constant $C$. \\
+
+If you're doing a \textbf{definite} integral meaning you have the bounds $a$ and $b$ you do NOT need to worry about the unidentified constant $C$ because it will difference out. However, if you are taking an \textbf{indefinite} integral then we don't know the bounds, and so we do need to keep track of the unidentified constant.
+
+\section{Example of constants}
+
+Consider this the function $f(x) = 3$, 
+\begin{align*}
+    F(x) &= \int f(x) dx\\
+    &=  \int 3 dx\\
+    &= 3 \int dx \\
+    &= 3 \int 1 dx\\
+    &= 3x + C
+\end{align*}
+
+% \section{Derivative rules to remember}
+
+% \begin{align*}
+%     f(x) = X^n \implies f'(x) = Nx^{N - 1}\\
+%     f(x) = e^x \implies f'(x) = e^x
+% \end{align*}
+
+\section{Considering ``Additively Separable'' functions and constants}
+
+In this example, we will see how the constants from separate terms of the integral can be combined into one final constant. 
+
+Consider the function 
+\begin{align*}
+    f(x) = \int 7x^2 + 3x +6 dx.
+\end{align*}
+
+The integral is a "linear operator" so we can integrate each of these terms that are separated by addition signs separately, 
+
+\begin{align*}
+    f(x) = \int 7x^2 dx + \int 3x dx +\int 6dx.
+\end{align*}
+We can now use the integral's version of the power rule to integrate these. 
+
+\textbf{Integral power rule:}
+
+\begin{align*}
+    \int x^n dx = \frac{1}{n}x^{n+1} + C
+\end{align*}
+
+applying the power rule to each term gives us 
+\begin{align}
+    f(x) = (\frac{7}{3} x^3 + X) + (\frac{3}{2} x^2 + Y) + (6x + Z) \label{const}
+\end{align}
+where $X, Y, Z$ are our unknown constants. We can define another unknown constant as 
+\begin{align*}
+    C = X + Y + Z 
+\end{align*}
+and rewrite equation \eqref{const} as 
+\begin{align*}
+    f(x) = \frac{7}{3} x^3  + \frac{3}{2} x^2 + 6x + C. 
+\end{align*}
+
+This shows us that even though each separate term we're integrating may have its own constant, we can combine them into a single final constant during integration. 
+
+\section{Integration by U-substitution}
+
+U-substitution is the reverse of the chain rule for derivatives. The key idea: when you see a function and its derivative multiplied together, you can do a U-substitution to simplify the integral.
+
+\textbf{The general rule:}
+\begin{align*}
+    \int f(u) \frac{du}{dx}dx = \int f(u) du
+\end{align*}
+
+\textbf{Step-by-step strategy:}
+\begin{enumerate}
+    \item \textbf{Identify the inner function:} Look for a ``complicated'' part of your integrand that, when differentiated, appears elsewhere in the integrand
+    \item \textbf{Set $u$ equal to that inner function:} $u = \text{[inner function]}$
+    \item \textbf{Find $du$:} Take the derivative: $du = \text{[derivative of inner function]} \cdot dx$
+    \item \textbf{Solve for $dx$:} Rearrange to get $dx = \frac{du}{\text{[derivative of inner function]}}$
+    \item \textbf{Substitute everything:} Replace all $x$ terms with $u$ terms
+    \item \textbf{Integrate:} Solve the simpler integral in terms of $u$
+    \item \textbf{Substitute back:} Replace $u$ with the original expression
+\end{enumerate}
+
+\textbf{Example}
+\begin{align*}
+    f(x) = \int x e^{x^2} dx
+\end{align*}
+
+\textbf{Step 1 \& 2:} The inner function is $x^2$ (it appears in the exponent), so let $u = x^2$
+
+\textbf{Step 3:} Find $du$: $du = 2x dx$
+
+\textbf{Step 4:} Solve for $dx$: $dx = \frac{du}{2x}$
+
+\textbf{Step 5 \& 6:} Substitute and integrate:
+\begin{align*}
+   &= \int x e^{x^2} dx \\
+    &= \int x e^{u} \frac{du}{2x} \quad \text{(substitute $u = x^2$ and $dx = \frac{du}{2x}$)}\\
+    &= \int \frac{e^u}{2} du \quad \text{(the $x$ terms cancel)}\\
+    &= \frac{1}{2} \int e^u du \text{ (constant moves out front)} \\
+    &= \frac{1}{2} e^u + C
+\end{align*}
+
+\textbf{Step 7:} Substitute back: $u = x^2$, so our final answer is:
+\begin{align*}
+    f(x) = \frac{1}{2} e^{x^2} + C
+\end{align*}
+
+\textbf{Key insight:} Notice how the $x$ from outside the exponential was exactly what we needed to cancel with the $2x$ from $du = 2x dx$. This is the hallmark of a good u-substitution - the pieces should cancel in useful ways to simplify the integration.
+
+\section[The importance of discounting: e to the power of -rt]{The importance of discounting: $e^{-rt}$}
+
+
+Consider a funny integral: 
+\begin{align*}
+    \int_0^\infty e^{-rt}dt
+\end{align*}
+Why is this weird? Because the support is 0 to $\infty$. However, when we integrate it, we will see that the area under this curve is finite (despite the function going to infinity). Let's show this is true with a U-sub. \\
+
+Let 
+\begin{align}
+    U = -rt \label{U}\\
+    \frac{dU}{dt} = -r \implies \\
+    dU = -r dt \implies \\
+    \frac{dU}{-r} = dt \label{dt}
+\end{align}
+
+plug in \ref{U} and \ref{dt} into our original integral 
+\begin{align*}
+    &= \int_0^\infty - \frac{1}{r} e^U du\\
+    &= -\frac{1}{r} \int_0^\infty e^u du\\
+    &= -\frac{1}{r} e^u \bigg|_0^\infty \\
+    &= -\frac{1}{r} e^{-rt} \bigg|_0^\infty \\
+    &=  -\frac{1}{r} e^{-r\infty} - -\frac{1}{r} e^{-r 0} \\
+    &= \frac{1}{r} ( -e ^{-r\infty} + e^{-r0} \\
+    &= \frac{1}{r} (0 + 1) \\
+    &= \frac{1}{r}
+\end{align*}
+
+Even though we integrated over an infinite support (0 to $\infty$) we have a finite area. \\
+
+This is \textbf{exponential decay} or a \textbf{discounting process}. This is a very important integral and it's used in applied settings often. \\
+
+This discount factor means that we can project a program into the future \textit{infinitely} and still find a finite value for the impact of that program. We can compare a program from now to the end of the world to a another program for the same length of time and see how they differ. \\
+
+For example:
+\begin{align*}
+    X = \int_0^\infty M(t) e^{-rt} dt\\
+    Y = \int_0^\infty N(t) e^{-rt} dt
+\end{align*}
+
+We can compare $X$ and $Y$ over an arbitrarily long period. If $M(t)$ represented a policy that affected wellbeing, and $N(t)$ was an alternative policy, we could use the discount rate $e^{-rt}$ to be able to evaluate which of those programs would achieve sustainable development goals over an arbitrarily long period.\\
+
+\subsection{Thin and Fat Tails}
+
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.5\textwidth]{Screen Shot 2023-10-04 at 10.56.06 AM.png}
+    \caption{https://www.statisticshowto.com/fat-tail-distribution/}
+    % \label{fig:sample}
+\end{figure}
+
+Above, if you were to integrate the "heavy tail" function it would not be finite! As x goes to $\infty$ the area under the function keeps getting bigger and bigger. If you were to integrate the "heavy tailed" function it would "blow up" aka go to infinity. \\
+
+The if you were to integrate under the "exponential" function in the picture above, you would get a finite answer similar to the function $e^{-rt}$. \\
+
+
+
+
+
+
+
+\end{document}

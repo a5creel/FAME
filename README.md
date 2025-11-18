@@ -32,3 +32,8 @@ Email: andie.creel\@yale.edu
 - [class notes](class_notes/week_4/4_class.pdf): Mean Value Theorem (derivative equals average rate of change), Taylor Series (polynomial approximations of functions, from 0th-order means to higher-order curves), practical approximations (e.g., estimating √10 or deriving logistic growth from Taylor expansion), partial derivatives (holding one variable constant to find relative maxima/minima), total derivatives (combining effects of multiple changing variables), and the implicit function theorem (how one variable must change to hold another constant, foundation for the envelope theorem in economics).
 - [Section Notes](section_notes/5_section%20copy.pdf): pset 2 help part I 
 - [Section Notes](section_notes/6_section%20copy.pdf): pset 2 help part II
+
+### Week Five (Nov 18) -- Integral I 
+- [class notes](class_notes/week_5/5_class.pdf): Integrating constants, Reimann Sums, Additively Separable Integrals, U-substitution 
+
+
