@@ -36,4 +36,6 @@ Email: andie.creel\@yale.edu
 ### Week Five (Nov 18) -- Integral I 
 - [class notes](class_notes/week_5/5_class.pdf): Integrating constants, Reimann Sums, Additively Separable Integrals, U-substitution 
 
+### Week Six (Dec 2) -- Integral I 
+- [class notes](class_notes/week_6/6_class.pdf): Discounting/practice with u-sub, Integration by Parts, Probability density functions (medians and means). Bonus notes on integrating ln(x) and cross partial derivatives to double integrals 
 

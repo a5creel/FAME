@@ -260,62 +260,62 @@ U-substitution is the reverse of the chain rule for derivatives. The key idea: w
 
 \textbf{Key insight:} Notice how the $x$ from outside the exponential was exactly what we needed to cancel with the $2x$ from $du = 2x dx$. This is the hallmark of a good u-substitution - the pieces should cancel in useful ways to simplify the integration.
 
-\section[The importance of discounting: e to the power of -rt]{The importance of discounting: $e^{-rt}$}
+% \section[The importance of discounting: e to the power of -rt]{The importance of discounting: $e^{-rt}$}
 
 
-Consider a funny integral: 
-\begin{align*}
-    \int_0^\infty e^{-rt}dt
-\end{align*}
-Why is this weird? Because the support is 0 to $\infty$. However, when we integrate it, we will see that the area under this curve is finite (despite the function going to infinity). Let's show this is true with a U-sub. \\
+% Consider a funny integral: 
+% \begin{align*}
+%     \int_0^\infty e^{-rt}dt
+% \end{align*}
+% Why is this weird? Because the support is 0 to $\infty$. However, when we integrate it, we will see that the area under this curve is finite (despite the function going to infinity). Let's show this is true with a U-sub. \\
 
-Let 
-\begin{align}
-    U = -rt \label{U}\\
-    \frac{dU}{dt} = -r \implies \\
-    dU = -r dt \implies \\
-    \frac{dU}{-r} = dt \label{dt}
-\end{align}
+% Let 
+% \begin{align}
+%     U = -rt \label{U}\\
+%     \frac{dU}{dt} = -r \implies \\
+%     dU = -r dt \implies \\
+%     \frac{dU}{-r} = dt \label{dt}
+% \end{align}
 
-plug in \ref{U} and \ref{dt} into our original integral 
-\begin{align*}
-    &= \int_0^\infty - \frac{1}{r} e^U du\\
-    &= -\frac{1}{r} \int_0^\infty e^u du\\
-    &= -\frac{1}{r} e^u \bigg|_0^\infty \\
-    &= -\frac{1}{r} e^{-rt} \bigg|_0^\infty \\
-    &=  -\frac{1}{r} e^{-r\infty} - -\frac{1}{r} e^{-r 0} \\
-    &= \frac{1}{r} ( -e ^{-r\infty} + e^{-r0} \\
-    &= \frac{1}{r} (0 + 1) \\
-    &= \frac{1}{r}
-\end{align*}
+% plug in \ref{U} and \ref{dt} into our original integral 
+% \begin{align*}
+%     &= \int_0^\infty - \frac{1}{r} e^U du\\
+%     &= -\frac{1}{r} \int_0^\infty e^u du\\
+%     &= -\frac{1}{r} e^u \bigg|_0^\infty \\
+%     &= -\frac{1}{r} e^{-rt} \bigg|_0^\infty \\
+%     &=  -\frac{1}{r} e^{-r\infty} - -\frac{1}{r} e^{-r 0} \\
+%     &= \frac{1}{r} ( -e ^{-r\infty} + e^{-r0} \\
+%     &= \frac{1}{r} (0 + 1) \\
+%     &= \frac{1}{r}
+% \end{align*}
 
-Even though we integrated over an infinite support (0 to $\infty$) we have a finite area. \\
+% Even though we integrated over an infinite support (0 to $\infty$) we have a finite area. \\
 
-This is \textbf{exponential decay} or a \textbf{discounting process}. This is a very important integral and it's used in applied settings often. \\
+% This is \textbf{exponential decay} or a \textbf{discounting process}. This is a very important integral and it's used in applied settings often. \\
 
-This discount factor means that we can project a program into the future \textit{infinitely} and still find a finite value for the impact of that program. We can compare a program from now to the end of the world to a another program for the same length of time and see how they differ. \\
+% This discount factor means that we can project a program into the future \textit{infinitely} and still find a finite value for the impact of that program. We can compare a program from now to the end of the world to a another program for the same length of time and see how they differ. \\
 
-For example:
-\begin{align*}
-    X = \int_0^\infty M(t) e^{-rt} dt\\
-    Y = \int_0^\infty N(t) e^{-rt} dt
-\end{align*}
+% For example:
+% \begin{align*}
+%     X = \int_0^\infty M(t) e^{-rt} dt\\
+%     Y = \int_0^\infty N(t) e^{-rt} dt
+% \end{align*}
 
-We can compare $X$ and $Y$ over an arbitrarily long period. If $M(t)$ represented a policy that affected wellbeing, and $N(t)$ was an alternative policy, we could use the discount rate $e^{-rt}$ to be able to evaluate which of those programs would achieve sustainable development goals over an arbitrarily long period.\\
+% We can compare $X$ and $Y$ over an arbitrarily long period. If $M(t)$ represented a policy that affected wellbeing, and $N(t)$ was an alternative policy, we could use the discount rate $e^{-rt}$ to be able to evaluate which of those programs would achieve sustainable development goals over an arbitrarily long period.\\
 
-\subsection{Thin and Fat Tails}
+% \subsection{Thin and Fat Tails}
 
 
-\begin{figure}[htp]
-    \centering
-        \includegraphics[width=0.5\textwidth]{Screen Shot 2023-10-04 at 10.56.06 AM.png}
-    \caption{https://www.statisticshowto.com/fat-tail-distribution/}
-    % \label{fig:sample}
-\end{figure}
+% \begin{figure}[htp]
+%     \centering
+%         \includegraphics[width=0.5\textwidth]{Screen Shot 2023-10-04 at 10.56.06 AM.png}
+%     \caption{https://www.statisticshowto.com/fat-tail-distribution/}
+%     % \label{fig:sample}
+% \end{figure}
 
-Above, if you were to integrate the "heavy tail" function it would not be finite! As x goes to $\infty$ the area under the function keeps getting bigger and bigger. If you were to integrate the "heavy tailed" function it would "blow up" aka go to infinity. \\
+% Above, if you were to integrate the "heavy tail" function it would not be finite! As x goes to $\infty$ the area under the function keeps getting bigger and bigger. If you were to integrate the "heavy tailed" function it would "blow up" aka go to infinity. \\
 
-The if you were to integrate under the "exponential" function in the picture above, you would get a finite answer similar to the function $e^{-rt}$. \\
+% The if you were to integrate under the "exponential" function in the picture above, you would get a finite answer similar to the function $e^{-rt}$. \\
 
 
 
